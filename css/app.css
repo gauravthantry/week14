@@ -1,0 +1,68 @@
+
+.window{
+    background-image: url("../images/wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+#content{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+}
+
+#frame{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2%;
+    background-color: rgba(222, 227, 231, 0.4);
+    padding : 1% 1% 2% 1%;
+    border-radius: 1%;
+}
+
+#partyHeader, #candidateHeader{
+    padding: 6% 2% 6% 2%;
+}
+
+
+.heading{
+    text-align: center;
+}
+
+#candidateVoteTable,#candidateForm, #partyVoteList,#partyVoteTable,#partyForm{
+    margin-top: 2%;
+}
+
+
+
+.label{
+    align-items: right;
+    text-align: right;
+}
+
+
+
+.voteInput{
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+h4{
+    text-align: center;
+}
+
+.formButton{
+    text-align: center;
+}
+
+svg{
+    display: inline;
+}
+
+
+#candidatePieChart,#partyPieChart{
+    margin: 0 auto;
+}
+
