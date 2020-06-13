@@ -4,6 +4,7 @@ var updateVotesParty = false
 google.charts.load('current', { 'packages': ['corechart'] })
 
 window.onload = function main() {
+    zoom()
 
     theElectorate = Controller.setup(updateVotesCandidate, updateVotesParty)
 
@@ -167,6 +168,10 @@ function partyChart() {
     chart.draw(data, options)
 }
 
+
+function zoom() {
+    document.body.style.zoom = "67%" 
+}
 
 
 
