@@ -40,9 +40,6 @@ window.onload = function main() {
     document.getElementById("candidateVoteInfo").appendChild(candidateForm)
     candidateForm.innerHTML = theElectorate.toCandidateResultsForm()
     
-
-   
-
     //----------------- 3 column div for the pie chart --------//
     var pieChart = document.createElement('div')
     pieChart.className = "six wide column"
