@@ -1,6 +1,3 @@
-#wrapper {
-    width:2200px;
-}
 
 .window{
     background-image: url("../images/wallpaper.jpg");
@@ -16,7 +13,7 @@
 }
 
 #frame{
-    width: 90%;
+    width:2200px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 2%;
@@ -25,7 +22,11 @@
     border-radius: 1%;
 }
 
-#partyHeader, #candidateHeader{
+ #candidateHeader{
+    padding: 6% 2% 6% 2%;
+}
+
+#partyHeader{
     padding: 6% 2% 6% 2%;
 }
 
@@ -34,7 +35,7 @@
     text-align: center;
 }
 
-#candidateVoteTable,#candidateForm, #partyVoteList,#partyVoteTable,#partyForm{
+#candidateVoteTable,#candidateVoteList,#candidateForm, #partyVoteList,#partyVoteTable,#partyForm{
     margin-top: 2%;
 }
 
@@ -66,6 +67,9 @@ svg{
 
 
 #candidatePieChart,#partyPieChart{
-    margin: 0 auto;
+    margin: 1% auto;
 }
 
+#candidateVoteInfo, #partyVoteInfo{
+    width: 100%;
+}

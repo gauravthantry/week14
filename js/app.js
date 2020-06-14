@@ -40,27 +40,6 @@ window.onload = function main() {
     candidateForm.setAttribute("id", "candidateForm")
     document.getElementById("candidateVoteInfo").appendChild(candidateForm)
     candidateForm.innerHTML = theElectorate.toCandidateResultsForm()
-    
-    //----------------- 3 column div for the pie chart --------//
-    var pieChart = document.createElement('div')
-    pieChart.className = "six wide column"
-    pieChart.setAttribute("id", "pieChart")
-    document.getElementById("gridContent").appendChild(pieChart)
- 
-    //----------------- candidate votes pie chart --------------//
-    var candidateVotePie = document.createElement('div')
-    candidateVotePie.setAttribute("id", "candidateVotePie")
-    document.getElementById("pieChart").appendChild(candidateVotePie)
-    google.charts.setOnLoadCallback(candidateChart)
-    candidateVotePie.innerHTML = '<div id="candidatePieChart"></div>'
-
-     //----------------- party votes pie chart --------------//
-     var partyVotePie = document.createElement('div')
-     partyVotePie.setAttribute("id", "partyVotePie")
-     document.getElementById("pieChart").appendChild(partyVotePie)
-     google.charts.setOnLoadCallback(partyChart)
-     partyVotePie.innerHTML = '<div id="partyPieChart"></div>'
-    //-----------------------------------------------------------//
 
     var partyVoteInfo = document.createElement('div')
     partyVoteInfo.className = "five wide column"
@@ -84,6 +63,29 @@ window.onload = function main() {
      partyForm.setAttribute("id", "partyForm")
      document.getElementById("partyVoteInfo").appendChild(partyForm)
      partyForm.innerHTML = theElectorate.toPartyResultsForm()
+    
+    //----------------- 3 column div for the pie chart --------//
+    var pieChart = document.createElement('div')
+    pieChart.className = "six wide column"
+    pieChart.setAttribute("id", "pieChart")
+    document.getElementById("gridContent").appendChild(pieChart)
+ 
+    //----------------- candidate votes pie chart --------------//
+    var candidateVotePie = document.createElement('div')
+    candidateVotePie.setAttribute("id", "candidateVotePie")
+    document.getElementById("pieChart").appendChild(candidateVotePie)
+    google.charts.setOnLoadCallback(candidateChart)
+    candidateVotePie.innerHTML = '<div id="candidatePieChart"></div>'
+
+     //----------------- party votes pie chart --------------//
+     var partyVotePie = document.createElement('div')
+     partyVotePie.setAttribute("id", "partyVotePie")
+     document.getElementById("pieChart").appendChild(partyVotePie)
+     google.charts.setOnLoadCallback(partyChart)
+     partyVotePie.innerHTML = '<div id="partyPieChart"></div>'
+    //-----------------------------------------------------------//
+
+
 
 }
 
@@ -128,14 +130,16 @@ function candidateChart() {
     }
 
      var options = {
-         legend: 'none',
+        //  legend: 'none',
         pieSliceText: 'label',
         title: 'Candidate Votes',
-        pieStartAngle: 100,
-        backgroundColor: 'transparent',
         pieHole: 0.4,
         'width': 700,
-        'height': 600
+        'height': 600,
+        backgroundColor: {
+            'fill': '#008080',
+            'fillOpacity': 0.3
+        }
      }
     var chart = new google.visualization.PieChart(document.getElementById('candidatePieChart'));
 
@@ -153,14 +157,16 @@ function partyChart() {
     }
 
     var options = {
-        legend: 'none',
         pieSliceText: 'label',
         title: 'Party Votes',
-        pieStartAngle: 100,
         backgroundColor: 'transparent',
         pieHole: 0.4,
         'width': 700,
-        'height': 600
+        'height': 600,
+        backgroundColor: {
+            'fill': '#008080',
+            'fillOpacity': 0.3
+        }
      }
 
     var chart = new google.visualization.PieChart(document.getElementById('partyPieChart'))

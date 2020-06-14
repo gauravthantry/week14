@@ -200,7 +200,7 @@ class Electorate {
 
   //------------------------------------ For fetching candidate results ------------------------------------//
   toCandidateResults(){
-   var result = `<div class="ui inverted  table" id="candidateHeader">   
+   var result = `<div class="ui inverted table" id="candidateHeader">   
                      <h3 class="heading">CANDIATE VOTES</h3></div> 
                          <table class="ui inverted grey table" id="candidateVoteList">
                              <tbody>
