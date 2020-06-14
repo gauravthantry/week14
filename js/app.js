@@ -134,8 +134,6 @@ function candidateChart() {
     }
 
      var options = {
-        //  legend: 'none',
-        pieSliceText: 'label',
         title: 'Candidate Votes',
         pieHole: 0.4,
         'width': 700,
@@ -161,7 +159,6 @@ function partyChart() {
     }
 
     var options = {
-        pieSliceText: 'label',
         title: 'Party Votes',
         backgroundColor: 'transparent',
         pieHole: 0.4,
