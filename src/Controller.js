@@ -29,14 +29,14 @@ class Controller {
 		theElectorate.addCandidate('MOORE, Robert Bruce','Green Party')
 		theElectorate.addCandidate('THOMSON, Allan George Robin','Conservative')
 		//------------------------------------------------//
-		if(updateVotesCandidate == false)
+		if(updateVotesCandidate == false || updateVotesCandidate== null)
 		{
 			theElectorate.setCandidateVotes('HUMPHREY, Hilary Jane Hammonds',8595)
 			theElectorate.setCandidateVotes('KURIGER, Barbara Joan',23854)
 			theElectorate.setCandidateVotes('MOORE, Robert Bruce',2900)
 			theElectorate.setCandidateVotes('THOMSON, Allan George Robin',568)
 		}
-		if(updateVotesParty == false)
+		if(updateVotesParty == false || updateVotesParty == null)
 		{
 			theElectorate.setPartyVotes('ACT New Zealand',231)
 			theElectorate.setPartyVotes('Aotearoa Legalise Cannabis Party',120)

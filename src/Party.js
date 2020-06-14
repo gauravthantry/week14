@@ -23,11 +23,11 @@ class Party {
     }
 
     setTotalVotes(newTotalVotes) {
-      this.totalVotes = parseInt(newTotalVotes)
+      this.totalVotes = Number(newTotalVotes)
     }
   
     setPercentVotes(newPercentVotes) {
-      this.percentVotes = parseInt(newPercentVotes)
+      this.percentVotes = Number(newPercentVotes).toFixed(2)
     }
   
     toResults(){

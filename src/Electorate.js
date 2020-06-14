@@ -153,7 +153,6 @@ class Electorate {
     {
       totalCombinedVotes += parseInt(theCandidate.totalVotes)
     }
-   
     for (var theCandidate of this.allMyCandidates)
     {
       theCandidate.setPercentVotes(Number((theCandidate.totalVotes/totalCombinedVotes)*100).toFixed(2))
