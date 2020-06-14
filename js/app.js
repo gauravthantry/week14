@@ -5,7 +5,7 @@ google.charts.load('current', { 'packages': ['corechart'] })
 
 window.onload = function main() {
     zoom()
-    
+
     theElectorate = Controller.setup(updateVotesCandidate, updateVotesParty)
 
     document.getElementById("content").innerHTML = theElectorate.toTable()
@@ -46,30 +46,30 @@ window.onload = function main() {
     partyVoteInfo.setAttribute("id", "partyVoteInfo")
     document.getElementById("gridContent").appendChild(partyVoteInfo)
 
-     //----------------- Prints the party votes without formating into columns--------//
-     var partyVoteList = document.createElement('div')
-     partyVoteList.setAttribute("id", "partyVoteList")
-     document.getElementById("partyVoteInfo").appendChild(partyVoteList)
-     partyVoteList.innerHTML = theElectorate.toPartyResults()
- 
-     //----------------- Prints the party votes in table column format-------//
-     var partyVoteTable = document.createElement('div')
-     partyVoteTable.setAttribute("id", "partyVoteTable")
-     document.getElementById("partyVoteInfo").appendChild(partyVoteTable)
-     partyVoteTable.innerHTML = theElectorate.toPartyResultsTable()
- 
-     //----------------- Prints the form format for inputing party votes------//
-     var partyForm = document.createElement('div')
-     partyForm.setAttribute("id", "partyForm")
-     document.getElementById("partyVoteInfo").appendChild(partyForm)
-     partyForm.innerHTML = theElectorate.toPartyResultsForm()
-    
+    //----------------- Prints the party votes without formating into columns--------//
+    var partyVoteList = document.createElement('div')
+    partyVoteList.setAttribute("id", "partyVoteList")
+    document.getElementById("partyVoteInfo").appendChild(partyVoteList)
+    partyVoteList.innerHTML = theElectorate.toPartyResults()
+
+    //----------------- Prints the party votes in table column format-------//
+    var partyVoteTable = document.createElement('div')
+    partyVoteTable.setAttribute("id", "partyVoteTable")
+    document.getElementById("partyVoteInfo").appendChild(partyVoteTable)
+    partyVoteTable.innerHTML = theElectorate.toPartyResultsTable()
+
+    //----------------- Prints the form format for inputing party votes------//
+    var partyForm = document.createElement('div')
+    partyForm.setAttribute("id", "partyForm")
+    document.getElementById("partyVoteInfo").appendChild(partyForm)
+    partyForm.innerHTML = theElectorate.toPartyResultsForm()
+
     //----------------- 3 column div for the pie chart --------//
     var pieChart = document.createElement('div')
     pieChart.className = "six wide column"
     pieChart.setAttribute("id", "pieChart")
     document.getElementById("gridContent").appendChild(pieChart)
- 
+
     //----------------- candidate votes pie chart --------------//
     var candidateVotePie = document.createElement('div')
     candidateVotePie.setAttribute("id", "candidateVotePie")
@@ -77,17 +77,17 @@ window.onload = function main() {
     google.charts.setOnLoadCallback(candidateChart)
     candidateVotePie.innerHTML = '<div id="candidatePieChart"></div>'
 
-     //----------------- party votes pie chart --------------//
-     var partyVotePie = document.createElement('div')
-     partyVotePie.setAttribute("id", "partyVotePie")
-     document.getElementById("pieChart").appendChild(partyVotePie)
-     google.charts.setOnLoadCallback(partyChart)
-     partyVotePie.innerHTML = '<div id="partyPieChart"></div>'
+    //----------------- party votes pie chart --------------//
+    var partyVotePie = document.createElement('div')
+    partyVotePie.setAttribute("id", "partyVotePie")
+    document.getElementById("pieChart").appendChild(partyVotePie)
+    google.charts.setOnLoadCallback(partyChart)
+    partyVotePie.innerHTML = '<div id="partyPieChart"></div>'
     //-----------------------------------------------------------//
 }
 
-window.onresize = function resizeChart(){
-    google.load("visualization", "1", {packages:["corechart"]})
+window.onresize = function resizeChart() {
+    google.load("visualization", "1", { packages: ["corechart"] })
     candidateChart()
     partyChart()
 }
@@ -125,6 +125,7 @@ function updatePartyVotes() {
 
 function candidateChart() {
     var data = new google.visualization.DataTable()
+    console.log("drew")
     data.addColumn('string', 'Candidate')
     data.addColumn('number', 'Votes');
     for (var i = 0; i < theElectorate.allMyCandidates.length; i++) {
@@ -133,16 +134,24 @@ function candidateChart() {
         )
     }
 
-     var options = {
+    var options = {
+        chartArea: {
+            height: '100%',
+            width: '100%',
+            top: 32,
+            left: 32,
+            bottom: 32,
+            right: 16
+        },
         title: 'Candidate Votes',
         pieHole: 0.4,
-        'width': 700,
-        'height': 600,
+        width: '100%',
+        height: '600',
         backgroundColor: {
             'fill': '#008080',
             'fillOpacity': 0.3
         }
-     }
+    }
     var chart = new google.visualization.PieChart(document.getElementById('candidatePieChart'));
 
     chart.draw(data, options)
@@ -159,16 +168,25 @@ function partyChart() {
     }
 
     var options = {
+        chartArea: {
+            height: '100%',
+            width: '100%',
+            top: 32,
+            left: 32,
+            bottom: 32,
+            right: 16
+        },
         title: 'Party Votes',
         backgroundColor: 'transparent',
         pieHole: 0.4,
-        'width': 700,
-        'height': 600,
+        width: '100%',
+        height: '600',
+        width_units: '%',
         backgroundColor: {
             'fill': '#008080',
             'fillOpacity': 0.3
         }
-     }
+    }
 
     var chart = new google.visualization.PieChart(document.getElementById('partyPieChart'))
 
@@ -177,7 +195,7 @@ function partyChart() {
 
 
 function zoom() {
-    document.body.style.zoom = "65%" 
+    document.body.style.zoom = "65%"
 }
 
 
