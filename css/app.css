@@ -1,4 +1,3 @@
-
 .window{
     background-image: url("../images/wallpaper.jpg");
     background-repeat: no-repeat;
@@ -13,7 +12,7 @@
 }
 
 #frame{
-    width:100%;
+    width:90%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 2%;
@@ -32,7 +31,6 @@
     padding-bottom: 6%;
 }
 
-
 .heading{
     text-align: center;
 }
@@ -41,14 +39,10 @@
     margin-top: 2%;
 }
 
-
-
 .label{
     align-items: right;
     text-align: right;
 }
-
-
 
 .voteInput{
     width: 100%;
@@ -66,7 +60,6 @@ h4{
 svg{
     display: inline;
 }
-
 
 #candidatePieChart,#partyPieChart{
     margin: 1% auto;
