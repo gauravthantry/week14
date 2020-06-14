@@ -291,7 +291,7 @@ class Electorate {
  
    toPartyResultsForm(){
       var result = `<div class="ui grey inverted segment">
-                         <h4>Taranaki-King Country 2017 Candidate Vote Total Entry</h4>
+                         <h4>Taranaki-King Country 2017 Party Vote Total Entry</h4>
                                   <form class="ui form" id="party-vote-update-form">`
      for(var theParty of this.allMyParties){
        result += theParty.toResultsInput()
