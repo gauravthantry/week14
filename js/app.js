@@ -170,7 +170,7 @@ function partyChart() {
 
 
 function zoom() {
-    document.body.style.zoom = "55%" 
+    document.body.style.zoom = "65%" 
 }
 
 
