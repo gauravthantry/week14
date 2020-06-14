@@ -1,6 +1,5 @@
 .window{
     background-image: url("../images/wallpaper.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
     }
 
@@ -16,6 +15,7 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 2%;
+    margin-bottom: 2%;
     background-color: rgba(222, 227, 231, 0.4);
     padding : 1% 1% 2% 1%;
     border-radius: 1%;
