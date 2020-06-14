@@ -5,7 +5,7 @@ google.charts.load('current', { 'packages': ['corechart'] })
 
 window.onload = function main() {
     zoom()
-
+    
     theElectorate = Controller.setup(updateVotesCandidate, updateVotesParty)
 
     document.getElementById("content").innerHTML = theElectorate.toTable()
@@ -84,10 +84,14 @@ window.onload = function main() {
      google.charts.setOnLoadCallback(partyChart)
      partyVotePie.innerHTML = '<div id="partyPieChart"></div>'
     //-----------------------------------------------------------//
-
-
-
 }
+
+window.onresize = function resizeChart(){
+    google.load("visualization", "1", {packages:["corechart"]})
+    candidateChart()
+    partyChart()
+}
+
 
 function updateCandidateVotes() {
     var updateVotesInputs = document.getElementById("candidate-vote-update-form").elements
